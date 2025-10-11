@@ -1,6 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
+
+// Typewriter effect with rotating words
+const words = ['Accounting', 'Bookkeeping', 'Tax Prep', 'Advisory'];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typewriterElement = document.getElementById('typewriter-text');
+
+function typeWriter() {
+    if (!typewriterElement) return;
+    
+    const currentWord = words[wordIndex];
+    
+    if (isDeleting) {
+        typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+    }
+    
+    let typeSpeed = isDeleting ? 50 : 100;
+    
+    if (!isDeleting && charIndex === currentWord.length) {
+        typeSpeed = 2000; // Pause at end
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        typeSpeed = 500; // Pause before typing next word
+    }
+    
+    setTimeout(typeWriter, typeSpeed);
+}
+
+// Start typewriter effect if on homepage
+if (typewriterElement) {
+    setTimeout(typeWriter, 1000);
+}
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {

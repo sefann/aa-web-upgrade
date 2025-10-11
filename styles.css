@@ -213,12 +213,12 @@ header.sticky .social-icon:hover {
     font-size: 125px;
     margin-bottom: 5px;
     font-weight: 600;
-    border-right: 1px solid #ffffff;
+    border-right: 3px solid #ffffff;
     white-space: nowrap;
     overflow: hidden;
-    animation: 
-        typing 7s steps(10) infinite,
-        blink-caret 0.3s step-end infinite;
+    min-height: 150px;
+    display: inline-block;
+    animation: blink-caret 0.75s step-end infinite;
 }
 
 .hero-content p {
@@ -228,18 +228,9 @@ header.sticky .social-icon:hover {
     margin-bottom: 40px;
 }
 
-@keyframes typing {
-    0%, 100% { 
-        width: 0;
-    }
-    20%, 80% {
-        width: 100%;
-    }
-}
-
 @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: rgba(255, 255, 255, 0.8) }
+    50% { border-color: rgba(255, 255, 255, 0.9) }
 }
 
 .hero-buttons {
