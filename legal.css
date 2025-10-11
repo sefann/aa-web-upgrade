@@ -1,0 +1,121 @@
+.legal-title {
+    padding: 180px 90px 120px;
+    font-size: 38px;
+    text-align: center;
+    background: linear-gradient(45deg, rgba(17, 27, 82, 0.884), rgba(0, 78, 127, 0.653)),
+                url('assets/images/consultation\ title.jpg') no-repeat center;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.legal-content {
+    padding: 80px 90px;
+    background-color: #f5f8ff;
+}
+
+.content-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.content-container h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 28px;
+    color: #1a2980;
+    margin: 40px 0 20px;
+}
+
+.content-container p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.content-container ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.content-container li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+    .legal-title {
+        padding: 140px 60px 100px;
+    }
+
+    .legal-content {
+        padding: 60px 40px;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .legal-title {
+        padding: 120px 20px 80px;
+        font-size: 24px;
+    }
+
+    .legal-content {
+        padding: 40px 20px;
+    }
+
+    .content-container h2 {
+        font-size: 24px;
+    }
+}
+
+/* Adding to existing legal.css */
+
+.content-container h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 22px;
+    color: #1a2980;
+    margin: 30px 0 15px;
+}
+
+.content-container strong {
+    color: #1a2980;
+    font-weight: 600;
+}
+
+.content-container ul li strong {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.content-container ul {
+    list-style-type: disc;
+    margin: 15px 0 25px 20px;
+}
+
+.content-container ul li {
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.content-container p + ul {
+    margin-top: -10px;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .content-container h3 {
+        font-size: 20px;
+        margin: 25px 0 12px;
+    }
+    
+    .content-container ul {
+        margin-left: 15px;
+    }
+    
+    .content-container ul li {
+        margin-bottom: 10px;
+    }
+    
+}
+

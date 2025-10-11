@@ -1,0 +1,326 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base font settings */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f8ff;
+}
+
+/* Header fonts */
+.pre-heading {
+    font-family: 'Lexend', sans-serif;
+}
+
+.hero-content h1 {
+    font-family: 'Lexend', sans-serif;
+}
+
+.menu a {
+    font-family: 'Lexend', sans-serif;
+}
+
+.menu ul li a.active {
+    position: relative;
+}
+
+.menu ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff9100;
+}
+
+/* Body text */
+.hero-content p {
+    font-family: 'Inter', sans-serif;
+}
+
+.primary-btn, .secondary-btn {
+    font-family: 'Inter', sans-serif;
+}
+
+.contact-title {
+    padding: 180px 90px 120px;
+    text-align: center;
+    background: linear-gradient(45deg, rgba(17, 27, 82, 0.884), rgba(0, 78, 127, 0.653)),
+                url('assets/images/contact\ us.jpg') no-repeat center;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.contact-title h1 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.underline {
+    width: 80px;
+    height: 4px;
+    background-color: #ffffff;
+    margin: 15px auto;
+}
+
+
+.contactUs-info {
+    padding: 120px 90px;
+    background-color: #f5f8ff;
+}
+
+.contactUs-info-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.info-box {
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+}
+
+.info-box i {
+    font-size: 40px;
+    color: #4665BB;
+    margin-bottom: 20px;
+}
+
+.info-box h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.info-box p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.location-btn, .contact-btn {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    color: #4665BB;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.location-btn i, .contact-btn i {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    transform: translateY(-1px);
+}
+
+.location-btn:hover i, .contact-btn:hover i {
+    transform: translateX(5px);
+}
+
+.info-box a {
+    color: #4665BB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.info-box a:hover {
+    color: #1a2980;
+}
+
+.consultation-cta {
+    padding: 120px 90px;
+    background: linear-gradient(45deg, rgba(17, 27, 82, 0.884), rgba(0, 78, 127, 0.653)),
+                url('assets/images/pexels-tima-miroshnichenko-6694543.jpg') no-repeat center;
+    background-size: cover;
+    text-align: center;
+}
+
+.cta-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.cta-subtitle {
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.consultation-cta h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 40px;
+    padding: 0%  20%;;
+}
+
+.cta-btn {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid #ffffff;
+    padding: 15px 40px;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #ffffff;
+    color: #4665BB;
+}
+
+/* Tablet styles (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .contact-title {
+        padding: 140px 60px 100px;
+    }
+
+    .title-container h1 {
+        font-size: 52px;
+    }
+}
+
+/* Mobile styles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .contact-title {
+        padding: 120px 20px 80px;
+    }
+
+    .title-container h1 {
+        font-size: 36px;
+    }
+
+    .title-container .underline {
+        width: 60px;
+        height: 3px;
+    }
+}
+
+/* Tablet styles (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .contactUs-info {
+        padding: 80px 40px;
+    }
+
+    .contactUs-info-container {
+        gap: 30px;
+    }
+
+    .info-box {
+        padding: 30px;
+    }
+}
+
+/* Mobile styles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .contactUs-info {
+        padding: 60px 20px;
+    }
+
+    .contactUs-info-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: 100%;
+    }
+
+    .info-box {
+        width: 100%;
+        max-width: none;
+        text-align: center;
+        padding: 30px 20px;
+        margin: 0;
+        border-bottom: 1px solid #00012c26;
+    }
+
+    .info-box:last-child {
+        border-bottom: none;
+    }
+
+    .info-box i {
+        align-items: center;
+        background: transparent;
+        border: none;
+        padding: 8px 0;
+    }
+
+    .location-btn, .contact-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .location-btn i, .contact-btn i {
+        margin: 0;
+    }
+}
+
+/* Tablet styles (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .consultation-cta {
+        padding: 80px 40px;
+    }
+
+    .cta-container h2 {
+        font-size: 42px;
+    }
+}
+
+/* Mobile styles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .consultation-cta {
+        padding: 60px 20px;
+    }
+
+    .cta-container {
+        text-align: center;
+    }
+
+    .cta-subtitle {
+        text-align: center;
+    }
+
+    .cta-container h2 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .cta-btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+
+
