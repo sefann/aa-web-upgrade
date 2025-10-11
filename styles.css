@@ -112,6 +112,37 @@ header.sticky {
     background-color: #ff9100;
 }
 
+/* Orange Contact Button in Header */
+.menu ul li a.contact-btn-header {
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    color: #ffffff !important;
+    padding: 10px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.menu ul li a.contact-btn-header:hover {
+    background: linear-gradient(135deg, #ff8c42 0%, #ffa556 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.menu ul li a.contact-btn-header::after {
+    display: none;
+}
+
+/* Sticky header - maintain orange button */
+header.sticky .menu ul li a.contact-btn-header {
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    color: #ffffff !important;
+}
+
+header.sticky .menu ul li a.contact-btn-header:hover {
+    background: linear-gradient(135deg, #ff8c42 0%, #ffa556 100%);
+}
+
 .social-links {
     display: flex;
     gap: 20px;
@@ -1784,6 +1815,16 @@ footer {
     .menu a {
         color: #333;
         font-size: 18px;
+    }
+
+    /* Orange Contact button in mobile menu */
+    .menu ul li a.contact-btn-header {
+        background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+        color: #ffffff !important;
+        padding: 12px 30px;
+        border-radius: 25px;
+        display: inline-block;
+        margin-top: 10px;
     }
 
     .social-links {
