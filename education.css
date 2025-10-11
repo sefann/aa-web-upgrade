@@ -1,0 +1,676 @@
+/* Education Hub Styles */
+
+/* Hero Section */
+.education-hero {
+    height: 60vh;
+    background: linear-gradient(45deg, rgba(26, 41, 128, 0.8), rgba(0, 4, 80, 0.8)),
+                url('assets/images/pexels-tima-miroshnichenko-6694543.jpg') no-repeat center;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 80px;
+}
+
+.education-hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.education-hero-content h1 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.education-hero-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.underline {
+    width: 100px;
+    height: 4px;
+    background: #ffffff;
+    margin: 0 auto;
+}
+
+/* Introduction Section */
+.education-intro {
+    padding: 100px 90px;
+    background-color: #f5f8ff;
+    text-align: center;
+}
+
+.education-intro-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.education-subtitle {
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #4665BB;
+    margin-bottom: 20px;
+}
+
+.education-intro h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #4665BB;
+    margin-bottom: 30px;
+}
+
+.education-intro p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* AA Tax Lab Section */
+.tax-lab {
+    padding: 120px 90px;
+    background: linear-gradient(135deg, rgba(70, 101, 187, 0.05) 0%, rgba(70, 101, 187, 0.1) 100%);
+}
+
+.tax-lab-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tax-lab-content {
+    text-align: center;
+}
+
+.tax-lab-badge {
+    display: inline-block;
+    background: #4665BB;
+    color: #ffffff;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.tax-lab h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: #1a2980;
+    margin-bottom: 15px;
+}
+
+.tax-lab-tagline {
+    font-family: 'Lexend', sans-serif;
+    font-size: 24px;
+    color: #4665BB;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.tax-lab-content > p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    max-width: 900px;
+    margin: 0 auto 60px;
+}
+
+/* Tax Lab Features */
+.tax-lab-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.feature-item {
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(70, 101, 187, 0.15);
+}
+
+.feature-item i {
+    font-size: 48px;
+    color: #4665BB;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Tax Lab Benefits */
+.tax-lab-benefits {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+.tax-lab-benefits h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a2980;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.tax-lab-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tax-lab-benefits li {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 15px;
+    padding-left: 40px;
+    position: relative;
+}
+
+.tax-lab-benefits li i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: #4665BB;
+    font-size: 20px;
+}
+
+/* Tax Lab CTA */
+.tax-lab-cta {
+    text-align: center;
+}
+
+.tax-lab-cta .primary-btn {
+    background: #4665BB;
+    color: #ffffff;
+    border: 2px solid #4665BB;
+    padding: 18px 50px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tax-lab-cta .primary-btn:hover {
+    background: #1a2980;
+    border-color: #1a2980;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 41, 128, 0.3);
+}
+
+.cta-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #666;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Webinars Section */
+.webinars {
+    padding: 120px 90px;
+    background-color: #ffffff;
+}
+
+.webinars-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.webinars-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.webinars-subtitle {
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #4665BB;
+    margin-bottom: 20px;
+}
+
+.webinars-header h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #4665BB;
+    margin-bottom: 20px;
+}
+
+.webinars-header p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Webinars Grid */
+.webinars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.webinar-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.webinar-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(70, 101, 187, 0.2);
+}
+
+.webinar-date {
+    background: linear-gradient(135deg, #4665BB 0%, #1a2980 100%);
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+}
+
+.webinar-date .month {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.webinar-date .day {
+    display: block;
+    font-family: 'Lexend', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.webinar-content {
+    padding: 30px;
+}
+
+.webinar-content h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a2980;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.webinar-time {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #4665BB;
+    margin-bottom: 15px;
+}
+
+.webinar-time i {
+    margin-right: 8px;
+}
+
+.webinar-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.webinar-topics {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.webinar-topics li {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.webinar-topics li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #4665BB;
+    font-weight: bold;
+}
+
+.webinar-btn {
+    width: 100%;
+    background: rgba(70, 101, 187, 0.1);
+    color: #4665BB;
+    border: 2px solid #4665BB;
+    padding: 12px 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.webinar-btn:hover {
+    background: #4665BB;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Webinars Archive */
+.webinars-archive {
+    text-align: center;
+    padding: 60px;
+    background: rgba(70, 101, 187, 0.05);
+    border-radius: 10px;
+}
+
+.webinars-archive h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #1a2980;
+    margin-bottom: 15px;
+}
+
+.webinars-archive p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.secondary-btn {
+    background: transparent;
+    color: #4665BB;
+    border: 2px solid #4665BB;
+    padding: 15px 40px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: #4665BB;
+    color: #ffffff;
+}
+
+/* Resources Section */
+.resources {
+    padding: 120px 90px;
+    background: linear-gradient(135deg, rgba(70, 101, 187, 0.05) 0%, rgba(70, 101, 187, 0.1) 100%);
+}
+
+.resources-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.resources-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.resources-subtitle {
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #4665BB;
+    margin-bottom: 20px;
+}
+
+.resources-header h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #4665BB;
+}
+
+/* Resources Grid */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.resource-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(70, 101, 187, 0.15);
+}
+
+.resource-card i {
+    font-size: 56px;
+    color: #4665BB;
+    margin-bottom: 25px;
+}
+
+.resource-card h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.resource-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.resource-btn {
+    background: rgba(70, 101, 187, 0.1);
+    color: #4665BB;
+    border: 2px solid #4665BB;
+    padding: 10px 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.resource-btn:hover {
+    background: #4665BB;
+    color: #ffffff;
+}
+
+/* Education CTA Section */
+.education-cta {
+    padding: 100px 90px;
+    background: linear-gradient(135deg, #1a2980 0%, #4665BB 100%);
+    text-align: center;
+}
+
+.education-cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-cta h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.education-cta p {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.education-cta .primary-btn {
+    background: #ffffff;
+    color: #4665BB;
+    border: 2px solid #ffffff;
+    padding: 18px 50px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.education-cta .primary-btn:hover {
+    background: transparent;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .education-hero-content h1 {
+        font-size: 52px;
+    }
+
+    .tax-lab h2 {
+        font-size: 48px;
+    }
+
+    .education-intro,
+    .tax-lab,
+    .webinars,
+    .resources,
+    .education-cta {
+        padding: 80px 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .education-hero {
+        height: 50vh;
+    }
+
+    .education-hero-content h1 {
+        font-size: 36px;
+    }
+
+    .education-hero-content p {
+        font-size: 16px;
+    }
+
+    .education-intro h2,
+    .webinars-header h2,
+    .resources-header h2 {
+        font-size: 32px;
+    }
+
+    .tax-lab h2 {
+        font-size: 36px;
+    }
+
+    .tax-lab-tagline {
+        font-size: 18px;
+    }
+
+    .education-intro,
+    .tax-lab,
+    .webinars,
+    .resources,
+    .education-cta {
+        padding: 60px 20px;
+    }
+
+    .tax-lab-features {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .tax-lab-benefits {
+        padding: 30px 20px;
+    }
+
+    .webinars-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .education-cta h2 {
+        font-size: 32px;
+    }
+
+    .education-cta p {
+        font-size: 16px;
+    }
+}
+
