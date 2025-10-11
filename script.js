@@ -21,22 +21,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 charIndex++;
             }
             
-            let typeSpeed = isDeleting ? 50 : 100;
+            let typeSpeed = isDeleting ? 75 : 120;
             
             if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 2000; // Pause at end
+                typeSpeed = 1500; // Pause at end (reduced from 2000ms)
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 500; // Pause before typing next word
+                typeSpeed = 300; // Pause before typing next word (reduced from 500ms)
             }
             
             setTimeout(typeWriter, typeSpeed);
         }
         
         // Start typewriter effect
-        setTimeout(typeWriter, 500);
+        setTimeout(typeWriter, 300);
     }
 });
 window.addEventListener('scroll', function() {
