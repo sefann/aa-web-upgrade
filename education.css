@@ -249,6 +249,84 @@
     font-style: italic;
 }
 
+/* Curriculum Section - What Participants Will Learn */
+.curriculum {
+    padding: 120px 90px;
+    background-color: #ffffff;
+}
+
+.curriculum-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.curriculum-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.curriculum-header h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: #4665BB;
+    margin-bottom: 20px;
+}
+
+.curriculum-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.curriculum-card {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e6edff 100%);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(70, 101, 187, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #ff8c42;
+}
+
+.curriculum-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(70, 101, 187, 0.2);
+}
+
+.curriculum-card h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #4665BB;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(70, 101, 187, 0.2);
+}
+
+.curriculum-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.curriculum-card ul li {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.curriculum-card ul li i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: #4665BB;
+    font-size: 16px;
+}
+
 /* Webinars Section */
 .webinars {
     padding: 120px 90px;
@@ -606,8 +684,13 @@
     .tax-lab,
     .webinars,
     .resources,
+    .curriculum,
     .education-cta {
         padding: 80px 40px;
+    }
+
+    .curriculum-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -663,6 +746,31 @@
     .resources-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .curriculum {
+        padding: 60px 20px;
+    }
+
+    .curriculum-header h2 {
+        font-size: 32px;
+    }
+
+    .curriculum-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .curriculum-card {
+        padding: 30px 20px;
+    }
+
+    .curriculum-card h3 {
+        font-size: 20px;
+    }
+
+    .curriculum-card ul li {
+        font-size: 14px;
     }
 
     .education-cta h2 {
