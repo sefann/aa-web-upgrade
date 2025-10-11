@@ -322,5 +322,253 @@ body {
     }
 }
 
+/* Prominent Orange Free Consultation Card */
+.free-consultation-card {
+    padding: 80px 90px;
+    background-color: #f5f8ff;
+}
 
+.consultation-card-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa556 100%);
+    border-radius: 20px;
+    padding: 60px;
+    box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.consultation-card-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.consultation-card-container::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.consultation-icon {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.consultation-icon i {
+    font-size: 56px;
+    color: #ffffff;
+}
+
+.consultation-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.consultation-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.consultation-content h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.consultation-content > p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.consultation-benefits {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.consultation-benefits li {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.consultation-benefits li i {
+    font-size: 18px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.consultation-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    color: #ff6b35;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 3px solid transparent;
+}
+
+.consultation-cta-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.consultation-cta-btn i {
+    transition: transform 0.3s ease;
+}
+
+.consultation-cta-btn:hover i {
+    transform: translateX(5px);
+}
+
+.consultation-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Responsive Styles for Orange Card */
+@media screen and (max-width: 1024px) {
+    .free-consultation-card {
+        padding: 60px 40px;
+    }
+
+    .consultation-card-container {
+        padding: 50px 40px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .consultation-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .consultation-icon i {
+        font-size: 48px;
+    }
+
+    .consultation-content h2 {
+        font-size: 36px;
+    }
+
+    .consultation-benefits {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        justify-items: center;
+    }
+
+    .consultation-benefits li {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .free-consultation-card {
+        padding: 40px 20px;
+    }
+
+    .consultation-card-container {
+        padding: 40px 25px;
+    }
+
+    .consultation-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .consultation-icon i {
+        font-size: 40px;
+    }
+
+    .consultation-content h2 {
+        font-size: 28px;
+    }
+
+    .consultation-content > p {
+        font-size: 16px;
+    }
+
+    .consultation-benefits {
+        gap: 10px;
+    }
+
+    .consultation-benefits li {
+        font-size: 14px;
+    }
+
+    .consultation-cta-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 30px;
+        font-size: 16px;
+    }
+}
 
