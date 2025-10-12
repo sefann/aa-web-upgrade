@@ -185,7 +185,7 @@ header.sticky .social-icon:hover {
 /* Hero Section Styles */
 .hero {
     height: 100vh;
-    background: linear-gradient(45deg, rgba(26, 41, 128, 0.85), rgba(0, 4, 80, 0.85)),
+    background: linear-gradient(45deg, rgba(26, 41, 128, 0.7), rgba(0, 4, 80, 0.7)),
                 url('assets/images/pexels-mikhail-nilov-8297447.jpg') no-repeat center;
     background-size: cover;
     background-position: center;
