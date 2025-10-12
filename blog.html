@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="blog.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -67,9 +67,10 @@
                             <span>CEO & Founder</span>
                         </div>
                     </div>
-                    <button class="read-more-btn">Read Full Article <i class="fas fa-arrow-right"></i></button>
+                    <button class="read-more-btn" onclick="toggleArticle('featured')">Read Full Article <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
+            
         </div>
     </section>
 
@@ -129,7 +130,7 @@
                                 <img src="assets/images/Nikki CTC.png" alt="Nikki Bushaw">
                                 <span>Nikki Bushaw</span>
                             </div>
-                            <button class="read-article-btn">Read More <i class="fas fa-arrow-right"></i></button>
+                            <button class="read-article-btn" onclick="toggleArticle('article1')">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </article>
@@ -152,103 +153,13 @@
                                 <img src="assets/images/Debra.png" alt="Debra Bradshaw">
                                 <span>Debra Bradshaw</span>
                             </div>
-                            <button class="read-article-btn">Read More <i class="fas fa-arrow-right"></i></button>
+                            <button class="read-article-btn" onclick="toggleArticle('article2')">Read More <i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </article>
 
-                <!-- Blog Post 3 -->
-                <article class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="assets/images/about hero 2.jpg" alt="Blog Post">
-                        <div class="blog-category">Bookkeeping Tips</div>
-                    </div>
-                    <div class="blog-card-content">
-                        <div class="post-meta">
-                            <span class="post-date"><i class="far fa-calendar"></i> Nov 28, 2024</span>
-                            <span class="post-read-time"><i class="far fa-clock"></i> 5 min</span>
-                        </div>
-                        <h3>5 Bookkeeping Mistakes That Cost You Money</h3>
-                        <p>Avoid these common bookkeeping errors that can lead to missed deductions, compliance issues, and financial headaches.</p>
-                        <div class="blog-footer">
-                            <div class="blog-author">
-                                <img src="assets/images/leingang.png" alt="KayDee Leingang">
-                                <span>KayDee Leingang</span>
-                            </div>
-                            <button class="read-article-btn">Read More <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 4 -->
-                <article class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="assets/images/consultation hero.jpg" alt="Blog Post">
-                        <div class="blog-category">Financial Literacy</div>
-                    </div>
-                    <div class="blog-card-content">
-                        <div class="post-meta">
-                            <span class="post-date"><i class="far fa-calendar"></i> Nov 20, 2024</span>
-                            <span class="post-read-time"><i class="far fa-clock"></i> 7 min</span>
-                        </div>
-                        <h3>Understanding Your Financial Statements: A Beginner's Guide</h3>
-                        <p>Demystify your balance sheet, income statement, and cash flow statement to make better business decisions.</p>
-                        <div class="blog-footer">
-                            <div class="blog-author">
-                                <img src="assets/images/luiz lozanoo.png" alt="Luis Lozano">
-                                <span>Luis Lozano</span>
-                            </div>
-                            <button class="read-article-btn">Read More <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 5 -->
-                <article class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="assets/images/our services.jpg" alt="Blog Post">
-                        <div class="blog-category">Tax Strategy</div>
-                    </div>
-                    <div class="blog-card-content">
-                        <div class="post-meta">
-                            <span class="post-date"><i class="far fa-calendar"></i> Nov 15, 2024</span>
-                            <span class="post-read-time"><i class="far fa-clock"></i> 5 min</span>
-                        </div>
-                        <h3>Quarterly Tax Payments: What You Need to Know</h3>
-                        <p>Stay compliant and avoid penalties by understanding how to calculate and pay your quarterly estimated taxes.</p>
-                        <div class="blog-footer">
-                            <div class="blog-author">
-                                <img src="assets/images/Nikki CTC.png" alt="Nikki Bushaw">
-                                <span>Nikki Bushaw</span>
-                            </div>
-                            <button class="read-article-btn">Read More <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 6 -->
-                <article class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="assets/images/aboutus.jpg" alt="Blog Post">
-                        <div class="blog-category">Business Growth</div>
-                    </div>
-                    <div class="blog-card-content">
-                        <div class="post-meta">
-                            <span class="post-date"><i class="far fa-calendar"></i> Nov 8, 2024</span>
-                            <span class="post-read-time"><i class="far fa-clock"></i> 6 min</span>
-                        </div>
-                        <h3>How to Scale Your Business Without Losing Profitability</h3>
-                        <p>Strategic financial planning tips to help you grow your business while maintaining healthy profit margins.</p>
-                        <div class="blog-footer">
-                            <div class="blog-author">
-                                <img src="assets/images/Debra.png" alt="Debra Bradshaw">
-                                <span>Debra Bradshaw</span>
-                            </div>
-                            <button class="read-article-btn">Read More <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </article>
             </div>
+
 
             <!-- Pagination -->
             <div class="pagination">
@@ -257,6 +168,100 @@
                 <button class="pagination-btn">3</button>
                 <button class="pagination-btn">4</button>
                 <button class="pagination-btn next-page">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSS News Section -->
+    <section class="rss-news">
+        <div class="rss-news-container">
+            <div class="rss-news-header">
+                <h2><i class="fas fa-rss"></i> Latest Financial News & Updates</h2>
+                <p>Stay informed with the latest tax updates, financial news, and bookkeeping tips from trusted US sources</p>
+            </div>
+            
+            <div class="rss-news-grid">
+                <a href="https://www.irs.gov/newsroom" target="_blank" class="rss-news-card-link">
+                    <div class="rss-news-card">
+                        <div class="rss-source">
+                            <i class="fas fa-newspaper"></i>
+                            <span>IRS News</span>
+                            <span class="update-time">Live Updates</span>
+                        </div>
+                        <h3>IRS Newsroom - Official Tax Updates</h3>
+                        <p>Get the latest official announcements, tax law changes, and filing guidance directly from the Internal Revenue Service.</p>
+                        <div class="rss-tags">
+                            <span class="tag">Official IRS</span>
+                            <span class="tag">Tax Law</span>
+                        </div>
+                        <div class="rss-link-indicator">
+                            <i class="fas fa-external-link-alt"></i> Visit IRS Newsroom
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.federalreserve.gov/newsevents/default.htm" target="_blank" class="rss-news-card-link">
+                    <div class="rss-news-card">
+                        <div class="rss-source">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Federal Reserve</span>
+                            <span class="update-time">Live Updates</span>
+                        </div>
+                        <h3>Federal Reserve Economic Updates</h3>
+                        <p>Stay informed about interest rate decisions, economic policy changes, and monetary policy updates that affect business financing.</p>
+                        <div class="rss-tags">
+                            <span class="tag">Interest Rates</span>
+                            <span class="tag">Economic Policy</span>
+                        </div>
+                        <div class="rss-link-indicator">
+                            <i class="fas fa-external-link-alt"></i> Visit Fed News
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.fasb.org/news" target="_blank" class="rss-news-card-link">
+                    <div class="rss-news-card">
+                        <div class="rss-source">
+                            <i class="fas fa-book"></i>
+                            <span>FASB News</span>
+                            <span class="update-time">Live Updates</span>
+                        </div>
+                        <h3>FASB Accounting Standards Updates</h3>
+                        <p>Follow the latest Generally Accepted Accounting Principles (GAAP) updates and new accounting standards from the Financial Accounting Standards Board.</p>
+                        <div class="rss-tags">
+                            <span class="tag">GAAP</span>
+                            <span class="tag">Accounting Standards</span>
+                        </div>
+                        <div class="rss-link-indicator">
+                            <i class="fas fa-external-link-alt"></i> Visit FASB
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.sec.gov/news" target="_blank" class="rss-news-card-link">
+                    <div class="rss-news-card">
+                        <div class="rss-source">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>SEC News</span>
+                            <span class="update-time">Live Updates</span>
+                        </div>
+                        <h3>SEC Business & Tax Regulations</h3>
+                        <p>Monitor Securities and Exchange Commission updates on business regulations, compliance requirements, and tax-related securities rules.</p>
+                        <div class="rss-tags">
+                            <span class="tag">Business Regulations</span>
+                            <span class="tag">Compliance</span>
+                        </div>
+                        <div class="rss-link-indicator">
+                            <i class="fas fa-external-link-alt"></i> Visit SEC News
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="rss-news-footer">
+                <a href="https://www.reuters.com/business/finance/" target="_blank">
+                    <button class="view-all-news-btn">View All News <i class="fas fa-external-link-alt"></i></button>
+                </a>
             </div>
         </div>
     </section>
@@ -329,7 +334,172 @@
         </div>
     </footer>
 
+    <!-- Article Modal -->
+    <div id="articleModal" class="modal" style="display: none;">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modalArticleContent"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        const articles = {
+            featured: {
+                title: "Year-End Tax Planning: Essential Strategies for Business Owners",
+                content: `
+                    <div class="modal-article">
+                        <h2>Year-End Tax Planning: Essential Strategies for Business Owners</h2>
+                        <p>As December approaches, smart business owners know that year-end tax planning can make the difference between paying more taxes than necessary and maximizing deductions. Here's your comprehensive guide to end-of-year tax strategies that could save your business thousands of dollars.</p>
+                        
+                        <h3>1. Review Your Current Tax Situation</h3>
+                        <p>Before making any year-end moves, assess where you stand. Calculate your projected income and deductions for the year. If you're close to a tax bracket threshold, strategic timing of income and expenses could save significant money.</p>
+                        
+                        <h3>2. Accelerate Deductible Expenses</h3>
+                        <p>Consider prepaying expenses that you can deduct this year:</p>
+                        <ul>
+                            <li>Office supplies and equipment</li>
+                            <li>Professional development and training</li>
+                            <li>Business insurance premiums</li>
+                            <li>Charitable contributions</li>
+                            <li>Marketing and advertising costs</li>
+                        </ul>
+                        
+                        <h3>3. Defer Income When Possible</h3>
+                        <p>If you're in a high tax bracket this year, consider deferring income to next year. This strategy works well for service businesses that can delay invoicing, businesses with flexible payment terms, and consultants.</p>
+                        
+                        <h3>4. Maximize Retirement Contributions</h3>
+                        <p>Business owners have excellent retirement savings options including SEP-IRA contributions (up to $69,000 for 2024), Solo 401(k) plans, Traditional IRA contributions, and Roth IRA conversions with strategic timing.</p>
+                        
+                        <h3>5. Section 179 and Bonus Depreciation</h3>
+                        <p>Take advantage of equipment purchase deductions with Section 179 (deduct up to $1.29 million), bonus depreciation (additional 60% first-year deduction), and qualified improvement property deductions.</p>
+                        
+                        <h3>6. Business Vehicle Strategies</h3>
+                        <p>If you need a new business vehicle, December is often the best time to purchase. Consider the business use percentage and whether standard mileage or actual expenses provide better deductions.</p>
+                        
+                        <h3>7. Health Savings Account (HSA) Contributions</h3>
+                        <p>If you have a high-deductible health plan, maximize your HSA contributions. These are triple tax-advantaged: deductible, tax-free growth, and tax-free withdrawals for qualified medical expenses.</p>
+                        
+                        <h3>8. Charitable Giving Strategies</h3>
+                        <p>Consider these tax-smart giving strategies: donate appreciated assets instead of cash, set up a donor-advised fund, and consider qualified charitable distributions from IRAs (if 70½ or older).</p>
+                        
+                        <h3>9. Home Office Deduction Review</h3>
+                        <p>If you work from home, ensure you're maximizing your home office deduction. The simplified method ($5 per square foot, up to 300 sq ft) or actual expenses method - choose whichever provides the larger deduction.</p>
+                        
+                        <h3>10. Document Everything</h3>
+                        <p>Proper documentation is crucial for all deductions. Keep receipts, mileage logs, and business purpose documentation organized and accessible.</p>
+                        
+                        <p><strong>Remember:</strong> Tax planning is complex and varies by individual circumstances. Consult with a qualified tax professional to ensure these strategies align with your specific situation and goals.</p>
+                        
+                        <div class="article-footer">
+                            <p><em>This article is for informational purposes only and does not constitute tax advice. Please consult with a qualified tax professional for advice specific to your situation.</em></p>
+                        </div>
+                    </div>
+                `
+            },
+            article1: {
+                title: "Top 10 Tax Deductions Small Business Owners Miss",
+                content: `
+                    <div class="modal-article">
+                        <h2>Top 10 Tax Deductions Small Business Owners Miss</h2>
+                        <p>Every year, small business owners leave thousands of dollars on the table by missing out on legitimate tax deductions. Here are the most commonly overlooked deductions that could significantly reduce your tax bill.</p>
+                        
+                        <h3>1. Home Office Expenses</h3>
+                        <p>Many business owners work from home but don't claim the home office deduction. You can deduct a portion of your rent, mortgage interest, utilities, and insurance based on the percentage of your home used for business.</p>
+                        
+                        <h3>2. Business Use of Personal Vehicle</h3>
+                        <p>Track your business mileage carefully. You can choose between the standard mileage rate (67¢ per mile in 2024) or actual expenses (gas, maintenance, depreciation).</p>
+                        
+                        <h3>3. Professional Development and Training</h3>
+                        <p>Courses, conferences, workshops, and certifications related to your business are deductible. This includes online courses, industry publications, and professional association memberships.</p>
+                        
+                        <h3>4. Marketing and Advertising</h3>
+                        <p>Website development, social media advertising, business cards, and promotional materials are all deductible marketing expenses.</p>
+                        
+                        <h3>5. Business Insurance</h3>
+                        <p>General liability, professional liability, business interruption, and even health insurance for self-employed individuals are deductible.</p>
+                        
+                        <h3>6. Software and Subscriptions</h3>
+                        <p>Accounting software, project management tools, cloud storage, and other business-related subscriptions are deductible.</p>
+                        
+                        <h3>7. Bank Fees and Interest</h3>
+                        <p>Business credit card interest, bank fees, and loan interest for business purposes are deductible.</p>
+                        
+                        <h3>8. Travel and Meals</h3>
+                        <p>Business travel expenses, client meals (50% deductible), and lodging for business trips are all deductible.</p>
+                        
+                        <h3>9. Equipment and Supplies</h3>
+                        <p>Computers, office furniture, tools, and supplies used for business are deductible. Consider Section 179 for larger equipment purchases.</p>
+                        
+                        <h3>10. Retirement Contributions</h3>
+                        <p>SEP-IRA, Solo 401(k), and other retirement plan contributions are deductible and reduce your taxable income.</p>
+                        
+                        <p><strong>Pro Tip:</strong> Keep detailed records of all business expenses. Receipts, mileage logs, and business purpose documentation are essential for audit protection.</p>
+                    </div>
+                `
+            },
+            article2: {
+                title: "Cash Flow Management: The Secret to Sustainable Growth",
+                content: `
+                    <div class="modal-article">
+                        <h2>Cash Flow Management: The Secret to Sustainable Growth</h2>
+                        <p>Cash flow management is the lifeblood of any successful business. Unlike profit, which is an accounting concept, cash flow is real money moving in and out of your business. Here's how to master it.</p>
+                        
+                        <h3>Understanding Cash Flow vs. Profit</h3>
+                        <p>You can be profitable on paper but still run out of cash. Profit includes non-cash items like depreciation, while cash flow tracks actual money movement. A profitable business can fail due to poor cash flow management.</p>
+                        
+                        <h3>1. Create a Cash Flow Forecast</h3>
+                        <p>Project your cash inflows and outflows for the next 3-6 months. Include expected sales revenue, accounts receivable collections, fixed expenses (rent, salaries), variable expenses (inventory, supplies), and tax payments.</p>
+                        
+                        <h3>2. Accelerate Cash Inflows</h3>
+                        <p>Improve your cash collection process by invoicing immediately upon delivery, offering early payment discounts, requiring deposits for large orders, using automated payment reminders, and considering factoring for slow-paying customers.</p>
+                        
+                        <h3>3. Optimize Cash Outflows</h3>
+                        <p>Manage your payments strategically by taking advantage of payment terms, negotiating better terms with suppliers, timing large purchases carefully, and using credit cards for short-term financing.</p>
+                        
+                        <h3>4. Maintain a Cash Reserve</h3>
+                        <p>Keep 3-6 months of operating expenses in reserve. This provides a buffer for seasonal fluctuations, unexpected expenses, opportunities for growth, and economic downturns.</p>
+                        
+                        <h3>5. Monitor Key Metrics</h3>
+                        <p>Track important cash flow indicators like Days Sales Outstanding (DSO), cash conversion cycle, operating cash flow ratio, and free cash flow.</p>
+                        
+                        <h3>6. Use Technology</h3>
+                        <p>Leverage accounting software and apps to automate invoicing and payments, track expenses in real-time, generate cash flow reports, and set up alerts for low balances.</p>
+                        
+                        <h3>7. Plan for Seasonal Variations</h3>
+                        <p>Many businesses experience seasonal fluctuations. Plan ahead by building cash reserves during peak seasons, negotiating flexible payment terms, diversifying revenue streams, and adjusting expenses during slow periods.</p>
+                        
+                        <p><strong>Remember:</strong> Cash flow management is an ongoing process. Regular monitoring and adjustment are key to maintaining healthy cash flow and supporting sustainable business growth.</p>
+                    </div>
+                `
+            }
+        };
+
+        function toggleArticle(articleId) {
+            const modal = document.getElementById('articleModal');
+            const modalContent = document.getElementById('modalArticleContent');
+            
+            modalContent.innerHTML = articles[articleId].content;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('articleModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
 
