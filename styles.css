@@ -1099,7 +1099,7 @@ header.sticky .social-icon:hover {
   }
 
 footer {
-    background-color: #1e3a8a;
+    background: linear-gradient(135deg, #1a2980 0%, #0a1952 100%);
     color: #ffffff;
     padding: 80px 90px 30px;
 }
@@ -1868,7 +1868,7 @@ footer {
 
 }
 footer {
-  background-color: #0a2f73; /* Adjust to match your footer background */
+  background: linear-gradient(135deg, #1a2980 0%, #0a1952 100%);
   color: white;
   padding-top: 20px;
 }
