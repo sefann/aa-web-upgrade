@@ -456,6 +456,235 @@ body {
     color: #555;
 }
 
+/* Office Locations Section */
+.office-locations {
+    padding: 120px 90px;
+    background-color: #ffffff;
+}
+
+.office-locations-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.office-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.office-subtitle {
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #4665BB;
+    margin-bottom: 20px;
+}
+
+.office-header h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #1a2980;
+    margin-bottom: 24px;
+}
+
+.office-header p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.offices-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.office-card {
+    background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(70, 101, 187, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.office-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(70, 101, 187, 0.2);
+    border-color: #4665BB;
+}
+
+.office-card.main-office {
+    background: linear-gradient(135deg, #4665BB 0%, #1a2980 100%);
+    color: #ffffff;
+}
+
+.office-card.main-office .office-icon i,
+.office-card.main-office h3,
+.office-card.main-office .detail-item i,
+.office-card.main-office .detail-item p {
+    color: #ffffff;
+}
+
+.office-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.office-card.main-office .office-badge {
+    background: #ffffff;
+    color: #4665BB;
+}
+
+.new-badge {
+    background: linear-gradient(135deg, #4665BB 0%, #1a2980 100%);
+}
+
+.office-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(70, 101, 187, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.office-card.main-office .office-icon {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.office-icon i {
+    font-size: 36px;
+    color: #4665BB;
+}
+
+.office-card h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a2980;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.office-details {
+    margin-bottom: 30px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-item i {
+    font-size: 18px;
+    color: #4665BB;
+    margin-top: 3px;
+    min-width: 20px;
+}
+
+.detail-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+.office-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #4665BB 0%, #1a2980 100%);
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(70, 101, 187, 0.2);
+}
+
+.office-btn:hover {
+    background: linear-gradient(135deg, #1a2980 0%, #4665BB 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(70, 101, 187, 0.3);
+}
+
+.office-card.main-office .office-btn {
+    background: #ffffff;
+    color: #4665BB;
+}
+
+.office-card.main-office .office-btn:hover {
+    background: #f0f4ff;
+}
+
+.office-btn.coming-soon {
+    background: linear-gradient(135deg, #ccc 0%, #999 100%);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.office-btn.coming-soon:hover {
+    transform: none;
+    box-shadow: 0 4px 15px rgba(70, 101, 187, 0.2);
+}
+
+/* Office Locations Responsive */
+@media screen and (max-width: 1024px) {
+    .office-locations {
+        padding: 80px 40px;
+    }
+
+    .office-header h2 {
+        font-size: 42px;
+    }
+
+    .offices-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .office-locations {
+        padding: 60px 20px;
+    }
+
+    .office-header h2 {
+        font-size: 32px;
+    }
+
+    .offices-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .office-card {
+        padding: 30px 20px;
+    }
+}
+
 /* Tablet styles (max-width: 1024px) */
 @media screen and (max-width: 1024px) {
     .about-hero {
