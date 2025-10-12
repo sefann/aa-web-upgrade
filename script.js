@@ -1,42 +1,60 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    // Update copyright year
+    const updateYear = () => {
+        const yearElement = document.getElementById('currentYear');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+    };
+    
+    // Try to update year immediately and also after a delay (for dynamically loaded footer)
+    updateYear();
+    setTimeout(updateYear, 100);
     
     // Typewriter effect with rotating words
-    const typewriterElement = document.getElementById('typewriter-text');
-    
-    if (typewriterElement) {
-        const words = ['Accounting', 'Bookkeeping', 'Tax Prep', 'Advisory'];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
+    const initTypewriter = () => {
+        const typewriterElement = document.getElementById('typewriter-text');
         
-        function typeWriter() {
-            const currentWord = words[wordIndex];
+        if (typewriterElement) {
+            const words = ['Accounting', 'Bookkeeping', 'Tax Prep', 'Advisory'];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
             
-            if (isDeleting) {
-                typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
+            function typeWriter() {
+                const currentWord = words[wordIndex];
+                
+                if (isDeleting) {
+                    typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                
+                let typeSpeed = isDeleting ? 75 : 120;
+                
+                if (!isDeleting && charIndex === currentWord.length) {
+                    typeSpeed = 1500; // Pause at end
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    typeSpeed = 300; // Pause before typing next word
+                }
+                
+                setTimeout(typeWriter, typeSpeed);
             }
             
-            let typeSpeed = isDeleting ? 75 : 120;
-            
-            if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 1500; // Pause at end (reduced from 2000ms)
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 300; // Pause before typing next word (reduced from 500ms)
-            }
-            
-            setTimeout(typeWriter, typeSpeed);
+            // Start typewriter effect
+            setTimeout(typeWriter, 300);
         }
-        
-        // Start typewriter effect
-        setTimeout(typeWriter, 300);
+    };
+    
+    // Initialize typewriter immediately and retry if element not found
+    initTypewriter();
+    if (!document.getElementById('typewriter-text')) {
+        setTimeout(initTypewriter, 100);
     }
 });
 window.addEventListener('scroll', function() {
