@@ -390,8 +390,8 @@ body {
 }
 
 .read-more-btn {
-    align-self: flex-start;
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    align-self: center;
+    background: linear-gradient(135deg, #4665BB 0%, #1a2980 100%);
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -401,13 +401,13 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(255, 107, 53, 0.2);
+    box-shadow: 0 3px 10px rgba(70, 101, 187, 0.2);
 }
 
 .read-more-btn:hover {
-    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+    background: linear-gradient(135deg, #1a2980 0%, #4665BB 100%);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 5px 15px rgba(70, 101, 187, 0.3);
 }
 
 .read-more-btn.expanded {
