@@ -334,6 +334,9 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .team-member:hover {
@@ -352,6 +355,9 @@ body {
 }
 .member-info {
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .member-info h3 {
@@ -369,11 +375,47 @@ body {
     margin-bottom: 20px;
 }
 
-.member-info p {
+.member-bio {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: #555;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.bio-preview,
+.bio-full {
+    display: inline;
+}
+
+.read-more-btn {
+    align-self: flex-start;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(255, 107, 53, 0.2);
+}
+
+.read-more-btn:hover {
+    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+.read-more-btn.expanded {
+    background: linear-gradient(135deg, #4665BB 0%, #1a2980 100%);
+}
+
+.read-more-btn.expanded:hover {
+    background: linear-gradient(135deg, #1a2980 0%, #4665BB 100%);
 }
 
 .ceo-section {

@@ -63,8 +63,11 @@
                     <div class="member-info">
                         <h3>Debra Bradshaw</h3>
                         <span class="role">Chief Operations Officer</span>
-                        <p>Debra Bradshaw is a U.S. Marine Corps veteran, entrepreneur, and accounting expert with a no-nonsense approach to business finances. With experience in government accounting, small business ownership, and working directly with business owners, she knows that financial success comes from precision, smart decisions, and strategic growth.</p>
-                    <p>As the founder of Bullet Proof Books, Debra has seen the costly mistakes businesses make—especially when unprepared for audits or financial challenges. Now, at Absolute Accountant, she helps entrepreneurs take control of their finances, avoid pitfalls, and build lasting success with confidence.</p>
+                        <p class="member-bio">
+                            <span class="bio-preview">Debra Bradshaw is a U.S. Marine Corps veteran, entrepreneur, and accounting expert with a no-nonsense approach to business finances. With experience in government accounting, small business ownership, and working directly with business owners...</span>
+                            <span class="bio-full" style="display: none;">Debra Bradshaw is a U.S. Marine Corps veteran, entrepreneur, and accounting expert with a no-nonsense approach to business finances. With experience in government accounting, small business ownership, and working directly with business owners, she knows that financial success comes from precision, smart decisions, and strategic growth. As the founder of Bullet Proof Books, Debra has seen the costly mistakes businesses make—especially when unprepared for audits or financial challenges. Now, at Absolute Accountant, she helps entrepreneurs take control of their finances, avoid pitfalls, and build lasting success with confidence.</span>
+                        </p>
+                        <button class="read-more-btn" onclick="toggleBio(this)">Read More</button>
                     </div>
                 </div>
             
@@ -75,7 +78,11 @@
                     <div class="member-info">
                         <h3>Luis Lozano</h3>
                         <span class="role">Project Accountant & IT Specialist</span>
-                        <p>Luis is based in sunny California and graduated from San Diego State University with a BA in Accounting! Fun Fact about Luis:  He really enjoys working on cars or attempting to fix whatever he breaks. He also likes to go on nice long hikes on steep mountains to get the heart pumping!</p>
+                        <p class="member-bio">
+                            <span class="bio-preview">Luis is based in sunny California and graduated from San Diego State University with a BA in Accounting! Fun Fact about Luis: He really enjoys working on cars or attempting to fix whatever he breaks...</span>
+                            <span class="bio-full" style="display: none;">Luis is based in sunny California and graduated from San Diego State University with a BA in Accounting! Fun Fact about Luis: He really enjoys working on cars or attempting to fix whatever he breaks. He also likes to go on nice long hikes on steep mountains to get the heart pumping!</span>
+                        </p>
+                        <button class="read-more-btn" onclick="toggleBio(this)">Read More</button>
                     </div>
                 </div>
 
@@ -86,7 +93,11 @@
                     <div class="member-info">
                         <h3>KayDee Leingang</h3>
                         <span class="role">Operations Manager</span>
-                        <p>For KayDee, honest communication is key. Supporting her husband’s small business sharpened her skills in connecting with clients and understanding their accounting needs. With professionalism and accurate financial records, she helps clients achieve their goals, leaving them with peace of mind.</p>
+                        <p class="member-bio">
+                            <span class="bio-preview">For KayDee, honest communication is key. Supporting her husband's small business sharpened her skills in connecting with clients and understanding their accounting needs...</span>
+                            <span class="bio-full" style="display: none;">For KayDee, honest communication is key. Supporting her husband's small business sharpened her skills in connecting with clients and understanding their accounting needs. With professionalism and accurate financial records, she helps clients achieve their goals, leaving them with peace of mind.</span>
+                        </p>
+                        <button class="read-more-btn" onclick="toggleBio(this)">Read More</button>
                     </div>
                 </div>
            
@@ -97,8 +108,11 @@
                     <div class="member-info">
                         <h3>Allison Kulstad</h3>
                         <span class="role">Payroll Specialist & Office Assistant</span>
-                        <p>Allison plays a vital role at Absolute Accountant, ensuring seamless payroll operations and providing exceptional administrative support. Her attention to detail and commitment to accuracy make her a trusted resource for both clients and colleagues.
-                        Outside of work, Allison is a proud wife and mother who brings her dedication and organizational skills into every aspect of her life.</p>
+                        <p class="member-bio">
+                            <span class="bio-preview">Allison plays a vital role at Absolute Accountant, ensuring seamless payroll operations and providing exceptional administrative support. Her attention to detail and commitment to accuracy make her a trusted resource...</span>
+                            <span class="bio-full" style="display: none;">Allison plays a vital role at Absolute Accountant, ensuring seamless payroll operations and providing exceptional administrative support. Her attention to detail and commitment to accuracy make her a trusted resource for both clients and colleagues. Outside of work, Allison is a proud wife and mother who brings her dedication and organizational skills into every aspect of her life.</span>
+                        </p>
+                        <button class="read-more-btn" onclick="toggleBio(this)">Read More</button>
                     </div>
                 </div>
 
@@ -109,7 +123,11 @@
                 <div class="member-info">
                     <h3>David Osuji</h3>
                     <span class="role">Administrative Assistant</span>
-                    <p>David is the administrative assistant at Absolute Accountant, where he enhances client experience through seamless support and coordination. With over 7 years of experience in project management and real estate—and a passion for travel—David brings a unique blend of precision and efficiency to help clients reach their financial goals.</p>
+                    <p class="member-bio">
+                        <span class="bio-preview">David is the administrative assistant at Absolute Accountant, where he enhances client experience through seamless support and coordination. With over 7 years of experience in project management...</span>
+                        <span class="bio-full" style="display: none;">David is the administrative assistant at Absolute Accountant, where he enhances client experience through seamless support and coordination. With over 7 years of experience in project management and real estate—and a passion for travel—David brings a unique blend of precision and efficiency to help clients reach their financial goals.</span>
+                    </p>
+                    <button class="read-more-btn" onclick="toggleBio(this)">Read More</button>
                 </div>
             </div>
             </div>
@@ -134,5 +152,24 @@
 
     <script src="/components/loader.js"></script>
     <script src="script.js"></script>
+    <script>
+        function toggleBio(button) {
+            const memberInfo = button.closest('.member-info');
+            const preview = memberInfo.querySelector('.bio-preview');
+            const full = memberInfo.querySelector('.bio-full');
+            
+            if (full.style.display === 'none') {
+                preview.style.display = 'none';
+                full.style.display = 'inline';
+                button.textContent = 'Read Less';
+                button.classList.add('expanded');
+            } else {
+                preview.style.display = 'inline';
+                full.style.display = 'none';
+                button.textContent = 'Read More';
+                button.classList.remove('expanded');
+            }
+        }
+    </script>
 </body>
 </html>
