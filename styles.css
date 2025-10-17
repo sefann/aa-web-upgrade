@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* Reset and Base Styles - Updated for sticky header fix */
 * {
     margin: 0;
     padding: 0;
@@ -51,13 +51,13 @@ header {
       width: 100%;
       top: 0;
       z-index: 1000;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
 }  
   
 header.sticky {
     background: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    height: 5px;
+    padding: 15px 120px;
 }
 
 .logo img {
@@ -76,7 +76,7 @@ header.sticky {
     font-weight: normal;
     text-decoration: none;
     color: #ffffff;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .menu a:hover {
@@ -171,15 +171,20 @@ header.sticky .menu ul li a.contact-btn-header:hover {
 /* Sticky header text colors */
 header.sticky .menu a,
 header.sticky .social-icon {
-    color: #333;
+    color: #333 !important;
 }
 
 header.sticky .menu a:hover {
-    color: #0026ff;
+    color: #4665BB !important;
 }
 
 header.sticky .social-icon:hover {
-    color: #0026ff;
+    color: #4665BB !important;
+}
+
+/* Ensure logo is visible in sticky mode */
+header.sticky .logo img {
+    opacity: 1;
 }
 
 /* Hero Section Styles */

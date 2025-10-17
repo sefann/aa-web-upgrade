@@ -1,7 +1,10 @@
 // Component Loader - Loads shared header and footer across all pages
 (function() {
+    // Add cache busting parameter
+    const cacheBuster = '?v=' + Date.now();
+    
     // Load header
-    fetch('/components/header.html')
+    fetch('/components/header.html' + cacheBuster)
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
@@ -10,7 +13,7 @@
         .catch(error => console.error('Error loading header:', error));
 
     // Load footer
-    fetch('/components/footer.html')
+    fetch('/components/footer.html' + cacheBuster)
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
