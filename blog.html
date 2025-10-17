@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="blog.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- RSS Feed Link -->
+    <link rel="alternate" type="application/rss+xml" title="Absolute Accountant RSS Feed" href="/rss.xml">
 </head>
 <body>
     <!-- cursor animation -->
@@ -23,6 +25,7 @@
             <h1>Our Blog</h1>
             <p>Financial insights, tax tips, and business strategies to help you thrive</p>
             <div class="underline"></div>
+            <div id="rss-link" class="rss-link-container"></div>
         </div>
     </section>
 
@@ -90,11 +93,29 @@
         </div>
     </section>
 
+    <!-- News Updates Section -->
+    <section class="news-updates">
+        <div class="news-updates-container">
+            <div class="news-header">
+                <h2>Latest News & Updates</h2>
+                <p>Stay informed with our latest announcements and important updates</p>
+            </div>
+            <div id="news-posts" class="news-posts-grid">
+                <!-- News posts will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
     <!-- Blog Posts Grid -->
     <section class="blog-posts">
         <div class="blog-posts-container">
             <div class="blog-posts-grid">
-                <!-- Blog Post 1 -->
+                <!-- CMS Blog Posts will be loaded here -->
+                <div id="blog-posts" class="cms-blog-posts">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+                
+                <!-- Static Blog Post 1 -->
                 <article class="blog-card">
                     <div class="blog-card-image">
                         <img src="assets/images/pexels-mikhail-nilov-8297447.jpg" alt="Blog Post">
@@ -280,6 +301,7 @@
     </div>
 
     <script src="/components/loader.js"></script>
+    <script src="blog-loader.js"></script>
     <script src="script.js"></script>
     <script>
         const articles = {

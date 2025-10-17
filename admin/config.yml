@@ -1,6 +1,11 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
+  
+# Alternative backend option for test mode (no authentication)
+# Uncomment below and comment out git-gateway for local testing
+# backend:
+#   name: test-repo
 
 # Uncomment below to enable drafts
 # publish_mode: editorial_workflow
