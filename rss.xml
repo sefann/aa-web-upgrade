@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Absolute Accountant - Blog & News</title>
+    <link>https://absoluteaccountant.com</link>
+    <description>Latest updates, tips, and insights from Absolute Accountant</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Oct 2025 02:39:06 GMT</lastBuildDate>
+    <atom:link href="https://absoluteaccountant.com/rss.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title><![CDATA[TaxDome Transition Update]]></title>
+      <link>https://absoluteaccountant.com/news/2024-10-17-taxdome-transition-update</link>
+      <description><![CDATA[We're excited to announce the successful transition to TaxDome platform, providing enhanced client experience and streamlined processes.]]></description>
+      <pubDate>Thu, 17 Oct 2024 14:30:00 GMT</pubDate>
+      <guid isPermaLink="true">https://absoluteaccountant.com/news/2024-10-17-taxdome-transition-update</guid>
+      <author>Absolute Accountant</author>
+      
+    </item>
+    <item>
+      <title><![CDATA[Welcome to Our Blog]]></title>
+      <link>https://absoluteaccountant.com/blog/2024-10-17-welcome-to-our-blog</link>
+      <description><![CDATA[Welcome to the Absolute Accountant blog where we share insights, tips, and updates about accounting and tax services.]]></description>
+      <pubDate>Thu, 17 Oct 2024 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://absoluteaccountant.com/blog/2024-10-17-welcome-to-our-blog</guid>
+      <author>Absolute Accountant</author>
+      <category><![CDATA[News]]></category><category><![CDATA[Welcome]]></category>
+    </item>
+  </channel>
+</rss>
