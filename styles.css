@@ -1130,6 +1130,7 @@ footer {
     font-size: 14px;
     line-height: 1.6;
     opacity: 0.8;
+    text-align: justify;
 }
   .footer-section h3 {
       font-family: 'Lexend', sans-serif;

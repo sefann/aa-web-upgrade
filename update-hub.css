@@ -102,13 +102,13 @@
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 4px solid #4665BB;
+    border-top: 4px solid #FF8C42;
     position: relative;
 }
 
 .update-card.featured {
-    border-top: 4px solid #FF8C42;
-    background: linear-gradient(135deg, #fff9f5 0%, #ffffff 100%);
+    border-top: 4px solid #4665BB;
+    background: #ffffff;
 }
 
 .update-card:hover {
@@ -136,6 +136,18 @@
     color: #ffffff;
 }
 
+.update-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+}
+
+.update-card.featured .update-icon {
+    background: linear-gradient(135deg, #4665BB 0%, #1a2980 100%) !important;
+    box-shadow: 0 4px 15px rgba(70, 101, 187, 0.25) !important;
+}
+
 .update-badge {
     display: inline-block;
     background: #4665BB;
@@ -148,10 +160,6 @@
     letter-spacing: 1px;
     margin-bottom: 15px;
     text-transform: uppercase;
-}
-
-.update-card.featured .update-badge {
-    background: #FF8C42;
 }
 
 .update-card h3 {
@@ -194,10 +202,6 @@
     font-size: 16px;
 }
 
-.update-card.featured .update-features li i {
-    color: #FF8C42;
-}
-
 .update-btn {
     background: rgba(70, 101, 187, 0.1);
     color: #4665BB;
@@ -216,17 +220,6 @@
     background: #4665BB;
     color: #ffffff;
     transform: translateY(-2px);
-}
-
-.update-card.featured .update-btn {
-    background: rgba(255, 140, 66, 0.1);
-    color: #FF8C42;
-    border-color: #FF8C42;
-}
-
-.update-card.featured .update-btn:hover {
-    background: #FF8C42;
-    color: #ffffff;
 }
 
 /* Timeline Section */
