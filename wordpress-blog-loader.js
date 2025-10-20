@@ -14,10 +14,16 @@ class WordPressBlogLoader {
 
     async init() {
         try {
+            // Hide content initially to prevent any flash
+            this.hideContent();
+            
             await this.loadBlogPosts();
             await this.loadFeaturedPost();
             this.renderContent();
             this.setupRSSFeed();
+            
+            // Show content only after everything is loaded
+            this.showContent();
         } catch (error) {
             console.error('Error initializing WordPress blog loader:', error);
             this.showError();
@@ -72,6 +78,38 @@ class WordPressBlogLoader {
             link: wpPost.link,
             slug: wpPost.slug
         };
+    }
+
+    hideContent() {
+        // Hide all blog-related content initially
+        const blogContainer = document.querySelector('.blog-posts-grid');
+        const featuredContainer = document.querySelector('.featured-post-container');
+        
+        if (blogContainer) {
+            blogContainer.style.opacity = '0';
+            blogContainer.style.visibility = 'hidden';
+        }
+        
+        if (featuredContainer) {
+            featuredContainer.style.opacity = '0';
+            featuredContainer.style.visibility = 'hidden';
+        }
+    }
+
+    showContent() {
+        // Show content with smooth transition
+        const blogContainer = document.querySelector('.blog-posts-grid');
+        const featuredContainer = document.querySelector('.featured-post-container');
+        
+        if (blogContainer) {
+            blogContainer.style.visibility = 'visible';
+            blogContainer.style.opacity = '1';
+        }
+        
+        if (featuredContainer) {
+            featuredContainer.style.visibility = 'visible';
+            featuredContainer.style.opacity = '1';
+        }
     }
 
     renderContent() {
@@ -144,16 +182,11 @@ class WordPressBlogLoader {
             return;
         }
 
-        // Show loading state initially
-        blogContainer.style.opacity = '0';
-        
+        // Create content while hidden
         const blogHTML = this.blogPosts.map(post => this.createPostHTML(post)).join('');
         blogContainer.innerHTML = blogHTML;
         
-        // Fade in after content is loaded
-        setTimeout(() => {
-            blogContainer.style.opacity = '1';
-        }, 100);
+        // Content will be shown by showContent() method
     }
 
     renderCategories() {

@@ -623,6 +623,29 @@
     color: #ffffff;
 }
 
+.resource-links {
+    margin-bottom: 20px;
+}
+
+.resource-link {
+    display: inline-block;
+    color: #4665BB;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid #4665BB;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.resource-link:hover {
+    background: #4665BB;
+    color: #ffffff;
+    text-decoration: none;
+}
+
 /* Education CTA Section */
 .education-cta {
     padding: 100px 90px;
