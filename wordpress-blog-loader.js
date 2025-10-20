@@ -98,7 +98,35 @@ class WordPressBlogLoader {
         const featuredDate = featuredContainer.querySelector('.post-date');
         const featuredBtn = featuredContainer.querySelector('.read-more-btn');
 
-        if (featuredImage) featuredImage.src = post.featuredImage;
+        // Hide content initially to prevent flash
+        if (featuredContainer) {
+            featuredContainer.style.opacity = '0';
+        }
+
+        // Preload the image to prevent flash
+        if (featuredImage && post.featuredImage) {
+            const img = new Image();
+            img.onload = () => {
+                featuredImage.src = post.featuredImage;
+                featuredImage.style.opacity = '1';
+                if (featuredContainer) {
+                    featuredContainer.style.opacity = '1';
+                }
+            };
+            img.onerror = () => {
+                featuredImage.src = '/assets/images/blog/default.jpg';
+                featuredImage.style.opacity = '1';
+                if (featuredContainer) {
+                    featuredContainer.style.opacity = '1';
+                }
+            };
+            img.src = post.featuredImage;
+        } else {
+            if (featuredContainer) {
+                featuredContainer.style.opacity = '1';
+            }
+        }
+
         if (featuredTitle) featuredTitle.textContent = post.title;
         if (featuredExcerpt) featuredExcerpt.textContent = post.excerpt;
         if (featuredDate) featuredDate.innerHTML = `<i class="far fa-calendar"></i> ${date}`;
@@ -108,16 +136,24 @@ class WordPressBlogLoader {
     }
 
     renderBlogPosts() {
-        const blogContainer = document.getElementById('blog-posts');
+        const blogContainer = document.querySelector('.blog-posts-grid');
         if (!blogContainer) return;
 
         if (this.blogPosts.length === 0) {
-            blogContainer.innerHTML = '<p style="text-align: center; padding: 40px;">No blog posts available. Check back soon!</p>';
+            blogContainer.innerHTML = '<p style="text-align: center; padding: 40px; grid-column: 1 / -1;">No blog posts available. Check back soon!</p>';
             return;
         }
 
+        // Show loading state initially
+        blogContainer.style.opacity = '0';
+        
         const blogHTML = this.blogPosts.map(post => this.createPostHTML(post)).join('');
         blogContainer.innerHTML = blogHTML;
+        
+        // Fade in after content is loaded
+        setTimeout(() => {
+            blogContainer.style.opacity = '1';
+        }, 100);
     }
 
     renderCategories() {
@@ -246,10 +282,10 @@ class WordPressBlogLoader {
 // Configuration object - UPDATE THIS WITH YOUR WORDPRESS URL
 const WP_CONFIG = {
     // Option 1: WordPress on subdomain (RECOMMENDED)
-    wordpressUrl: 'https://blog.absoluteaccountant.com',
+    // wordpressUrl: 'https://blog.absoluteaccountant.com',
     
-    // Option 2: WordPress in subfolder
-    // wordpressUrl: 'https://absoluteaccountant.com/blog',
+    // Option 2: WordPress in subfolder (ACTIVE)
+    wordpressUrl: 'https://absoluteaccountant.com/blog',
     
     // Option 3: Local testing
     // wordpressUrl: 'http://localhost/wordpress'
