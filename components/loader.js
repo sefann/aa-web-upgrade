@@ -9,6 +9,11 @@
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
             setActiveNavLink();
+            
+            // Initialize mobile menu after header is loaded
+            if (typeof initializeMobileMenu === 'function') {
+                initializeMobileMenu();
+            }
         })
         .catch(error => console.error('Error loading header:', error));
 
