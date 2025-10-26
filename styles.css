@@ -1776,7 +1776,7 @@ footer {
     color: #333333;
     font-size: 24px;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 1002;
     padding: 8px;
     border-radius: 4px;
     transition: all 0.3s ease;
@@ -1784,6 +1784,7 @@ footer {
     min-height: 44px;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .mobile-menu-btn:hover {
@@ -1793,6 +1794,14 @@ footer {
 .mobile-menu-btn.active {
     color: #4665BB;
     background: rgba(70, 101, 187, 0.1);
+}
+
+.mobile-menu-btn i {
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-btn.active i {
+    transform: rotate(90deg);
 }
 
 
@@ -1811,16 +1820,39 @@ footer {
 @media screen and (max-width: 768px) {
     header {
         padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
     }
 
     header.sticky {
-        height: 55px;
+        height: 60px;
+        padding: 10px 20px;
+        min-height: 60px;
     }
 
-    /* Mobile menu button colors now handled by default styles */
+    .logo {
+        flex-shrink: 0;
+        z-index: 1002;
+        max-width: 50%;
+    }
+
+    .logo img {
+        height: 35px;
+        width: auto;
+        max-width: 100%;
+    }
 
     .mobile-menu-btn {
-        display: flex;
+        display: flex !important;
+        flex-shrink: 0;
+        z-index: 1002;
+        margin-left: auto;
+        position: relative;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
     }
 
     .menu {
@@ -1888,8 +1920,41 @@ footer {
     .social-links {
         display: none;
     }
-   
-    align-items: center;  /* Ensures proper alignment */
 }
 
+/* Extra small mobile styles (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 12px 15px;
+    }
+
+    header.sticky {
+        height: 55px;
+        padding: 8px 15px;
+        min-height: 55px;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .mobile-menu-btn {
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 20px;
+    }
+
+    .menu {
+        width: 85%;
+        padding: 70px 20px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+
+    .menu ul li a.contact-btn-header {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
 }

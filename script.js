@@ -67,11 +67,21 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Mobile Menu Toggle - Initialize after header is loaded
+// Mobile Menu Toggle - More robust initialization
+let mobileMenuInitialized = false;
+
 function initializeMobileMenu() {
+    // Prevent multiple initializations
+    if (mobileMenuInitialized) return;
+    
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const menu = document.querySelector('.menu');
     const menuIcon = document.querySelector('.mobile-menu-btn i');
+    
+    console.log('Attempting to initialize mobile menu...');
+    console.log('Mobile menu button found:', !!mobileMenuBtn);
+    console.log('Menu found:', !!menu);
+    console.log('Menu icon found:', !!menuIcon);
     
     // Create overlay if it doesn't exist
     let overlay = document.querySelector('.menu-overlay');
@@ -79,42 +89,60 @@ function initializeMobileMenu() {
         overlay = document.createElement('div');
         overlay.classList.add('menu-overlay');
         document.body.appendChild(overlay);
+        console.log('Created menu overlay');
     }
 
     if (mobileMenuBtn && menu && menuIcon) {
-        // Remove any existing event listeners to prevent duplicates
-        const newMobileMenuBtn = mobileMenuBtn.cloneNode(true);
-        mobileMenuBtn.parentNode.replaceChild(newMobileMenuBtn, mobileMenuBtn);
-        
-        const newMenuIcon = newMobileMenuBtn.querySelector('i');
-        
-        newMobileMenuBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            menu.classList.toggle('active');
-            newMobileMenuBtn.classList.toggle('active');
-            overlay.classList.toggle('active');
-            newMenuIcon.classList.toggle('fa-bars');
-            newMenuIcon.classList.toggle('fa-times');
-            
-            // Prevent body scroll when menu is open
-            if (menu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
-        });
-
         // Function to close menu
         const closeMenu = () => {
             menu.classList.remove('active');
-            newMobileMenuBtn.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
             overlay.classList.remove('active');
-            newMenuIcon.classList.add('fa-bars');
-            newMenuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+            menuIcon.classList.remove('fa-times');
             document.body.style.overflow = 'auto';
+            console.log('Menu closed');
         };
+
+        // Function to open menu
+        const openMenu = () => {
+            menu.classList.add('active');
+            mobileMenuBtn.classList.add('active');
+            overlay.classList.add('active');
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+            document.body.style.overflow = 'hidden';
+            console.log('Menu opened');
+        };
+
+        // Toggle menu function
+        const toggleMenu = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Menu button clicked');
+            
+            if (menu.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        };
+        
+        // Remove any existing event listeners by cloning the button
+        const newMobileMenuBtn = mobileMenuBtn.cloneNode(true);
+        mobileMenuBtn.parentNode.replaceChild(newMobileMenuBtn, mobileMenuBtn);
+        
+        // Get the new menu icon
+        const newMenuIcon = newMobileMenuBtn.querySelector('i');
+        
+        // Add click event listener to the new button
+        newMobileMenuBtn.addEventListener('click', toggleMenu);
+        
+        // Also add touch event for mobile devices
+        newMobileMenuBtn.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            toggleMenu(e);
+        });
 
         // Close menu when clicking on menu links
         const menuLinks = document.querySelectorAll('.menu a');
@@ -139,18 +167,74 @@ function initializeMobileMenu() {
             }
         });
         
+        mobileMenuInitialized = true;
         console.log('Mobile menu initialized successfully');
     } else {
-        console.log('Mobile menu elements not found, retrying...');
+        console.log('Mobile menu elements not found, retrying in 100ms...');
         // Retry after a short delay
         setTimeout(initializeMobileMenu, 100);
     }
 }
 
-// Initialize mobile menu when DOM is ready
+// Multiple initialization attempts to ensure it works
 document.addEventListener('DOMContentLoaded', function() {
-    // Wait a bit for the header to be loaded by loader.js
-    setTimeout(initializeMobileMenu, 200);
+    console.log('DOM loaded, initializing mobile menu...');
+    // Try immediately
+    initializeMobileMenu();
+    // Try after a short delay
+    setTimeout(initializeMobileMenu, 100);
+    // Try after header is loaded
+    setTimeout(initializeMobileMenu, 500);
+    // Try after a longer delay as fallback
+    setTimeout(initializeMobileMenu, 1000);
+});
+
+// Also try when window loads
+window.addEventListener('load', function() {
+    console.log('Window loaded, trying mobile menu initialization...');
+    initializeMobileMenu();
+});
+
+// Fallback: Direct event delegation approach
+document.addEventListener('click', function(e) {
+    // Check if the clicked element is the mobile menu button
+    if (e.target.closest('.mobile-menu-btn')) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const menu = document.querySelector('.menu');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const menuIcon = document.querySelector('.mobile-menu-btn i');
+        let overlay = document.querySelector('.menu-overlay');
+        
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.classList.add('menu-overlay');
+            document.body.appendChild(overlay);
+        }
+        
+        if (menu && mobileMenuBtn && menuIcon) {
+            if (menu.classList.contains('active')) {
+                // Close menu
+                menu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                overlay.classList.remove('active');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-times');
+                document.body.style.overflow = 'auto';
+                console.log('Menu closed via fallback');
+            } else {
+                // Open menu
+                menu.classList.add('active');
+                mobileMenuBtn.classList.add('active');
+                overlay.classList.add('active');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
+                console.log('Menu opened via fallback');
+            }
+        }
+    }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
