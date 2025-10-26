@@ -32,3 +32,6 @@ node_modules/
 error_log
 cgi-bin/
 
+# Distribution files
+*.zip
+
