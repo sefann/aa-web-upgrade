@@ -365,31 +365,34 @@ body {
     opacity: 1;
 }
 
-.overlay-content {
-    text-align: center;
-    color: white;
-    padding: 20px;
-}
+    .overlay-content {
+        text-align: center;
+        color: #ffffff;
+        padding: 20px;
+    }
 
-.overlay-content i {
-    font-size: 32px;
-    margin-bottom: 10px;
-    opacity: 0.9;
-}
+    .overlay-content i {
+        font-size: 32px;
+        margin-bottom: 10px;
+        color: #ffffff;
+        opacity: 1;
+    }
 
-.overlay-content h3 {
-    font-family: 'Lexend', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
+    .overlay-content h3 {
+        font-family: 'Lexend', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #ffffff;
+    }
 
-.overlay-content p {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    opacity: 0.9;
-    margin: 0;
-}
+    .overlay-content p {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        color: #f8f9fa;
+        opacity: 1;
+        margin: 0;
+    }
 
 
 
