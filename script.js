@@ -68,15 +68,71 @@ window.addEventListener('scroll', function() {
 });
 
 // Mobile Menu Toggle
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const menu = document.querySelector('.menu');
-const menuIcon = document.querySelector('.mobile-menu-btn i');
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const menu = document.querySelector('.menu');
+    const menuIcon = document.querySelector('.mobile-menu-btn i');
+    
+    // Create overlay if it doesn't exist
+    let overlay = document.querySelector('.menu-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.classList.add('menu-overlay');
+        document.body.appendChild(overlay);
+    }
 
-mobileMenuBtn.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    mobileMenuBtn.classList.toggle('active');
-    menuIcon.classList.toggle('fa-bars');
-    menuIcon.classList.toggle('fa-times');
+    if (mobileMenuBtn && menu && menuIcon) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            menu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            overlay.classList.toggle('active');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-times');
+            
+            // Prevent body scroll when menu is open
+            if (menu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Function to close menu
+        const closeMenu = () => {
+            menu.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            overlay.classList.remove('active');
+            menuIcon.classList.add('fa-bars');
+            menuIcon.classList.remove('fa-times');
+            document.body.style.overflow = 'auto';
+        };
+
+        // Close menu when clicking on menu links
+        const menuLinks = document.querySelectorAll('.menu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu when clicking on overlay
+        overlay.addEventListener('click', closeMenu);
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && menu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
