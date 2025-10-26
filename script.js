@@ -186,55 +186,67 @@ let isDragging = false;
 let startX;
 let scrollLeft;
 
-const handleDrag = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - carousel.offsetLeft;
-    const walk = (x - startX) * 2;
-    
-    requestAnimationFrame(() => {
-        carousel.scrollLeft = scrollLeft - walk;
+// Only initialize carousel if it exists
+if (carousel) {
+    const handleDrag = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2;
+        
+        requestAnimationFrame(() => {
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+    };
+
+    carousel.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        carousel.style.cursor = 'grabbing';
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
     });
-};
 
-carousel.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    carousel.style.cursor = 'grabbing';
-    startX = e.pageX - carousel.offsetLeft;
-    scrollLeft = carousel.scrollLeft;
-});
-
-carousel.addEventListener('mousemove', handleDrag);
-carousel.addEventListener('mouseup', () => {
-    isDragging = false;
-    carousel.style.cursor = 'grab';
-});
-carousel.addEventListener('mouseleave', () => {
-    isDragging = false;
-    carousel.style.cursor = 'grab';
-});
+    carousel.addEventListener('mousemove', handleDrag);
+    carousel.addEventListener('mouseup', () => {
+        isDragging = false;
+        carousel.style.cursor = 'grab';
+    });
+    carousel.addEventListener('mouseleave', () => {
+        isDragging = false;
+        carousel.style.cursor = 'grab';
+    });
+}
 
 const createDots = () => {
     const dotsContainer = document.querySelector('.carousel-dots');
     const items = document.querySelectorAll('.carousel-item');
-    const uniqueItems = items.length / 2;
     
-    for (let i = 0; i < uniqueItems; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active');
-        dotsContainer.appendChild(dot);
+    if (dotsContainer && items.length > 0) {
+        const uniqueItems = items.length / 2;
+        
+        for (let i = 0; i < uniqueItems; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dotsContainer.appendChild(dot);
+        }
     }
 };
 
 const updateDots = () => {
-    const dots = document.querySelectorAll('.dot');
-    const itemWidth = carousel.querySelector('.carousel-item').offsetWidth;
-    const activeIndex = Math.round(carousel.scrollLeft / itemWidth) % dots.length;
+    if (!carousel) return;
     
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === activeIndex);
-    });
+    const dots = document.querySelectorAll('.dot');
+    const carouselItem = carousel.querySelector('.carousel-item');
+    
+    if (dots.length > 0 && carouselItem) {
+        const itemWidth = carouselItem.offsetWidth;
+        const activeIndex = Math.round(carousel.scrollLeft / itemWidth) % dots.length;
+        
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === activeIndex);
+        });
+    }
 };
 
 // Testimonials Carousel
@@ -247,25 +259,30 @@ const nextBtn = document.querySelector('.next-btn');
 let currentIndex = 0;
 
 function showTestimonial(index) {
+    if (testimonials.length === 0 || avatars.length === 0) return;
+    
     testimonials.forEach(item => item.classList.remove('active'));
     avatars.forEach(avatar => avatar.classList.remove('active'));
     
-    testimonials[index].classList.add('active');
-    avatars[index].classList.add('active');
+    if (testimonials[index]) testimonials[index].classList.add('active');
+    if (avatars[index]) avatars[index].classList.add('active');
 }
 
 function nextTestimonial() {
+    if (testimonials.length === 0) return;
     currentIndex = (currentIndex + 1) % testimonials.length;
     showTestimonial(currentIndex);
 }
 
 function prevTestimonial() {
+    if (testimonials.length === 0) return;
     currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
     showTestimonial(currentIndex);
 }
 
-prevBtn.addEventListener('click', prevTestimonial);
-nextBtn.addEventListener('click', nextTestimonial);
+// Only add event listeners if elements exist
+if (prevBtn) prevBtn.addEventListener('click', prevTestimonial);
+if (nextBtn) nextBtn.addEventListener('click', nextTestimonial);
 
 avatars.forEach((avatar, index) => {
     avatar.addEventListener('click', () => {
@@ -279,43 +296,48 @@ let testimonialDragging = false;
 let testimonialStartX;
 let dragThreshold = 30; // Reduce threshold for more responsive dragging
 
-testimonialCarousel.addEventListener('mousedown', (e) => {
-    testimonialDragging = true;
-    testimonialStartX = e.pageX;
-    testimonialCarousel.style.cursor = 'grabbing';
-});
+if (testimonialCarousel) {
+    testimonialCarousel.addEventListener('mousedown', (e) => {
+        testimonialDragging = true;
+        testimonialStartX = e.pageX;
+        testimonialCarousel.style.cursor = 'grabbing';
+    });
 
-testimonialCarousel.addEventListener('mousemove', (e) => {
-    if (!testimonialDragging) return;
-    e.preventDefault();
-    const x = e.pageX;
-    const walk = (x - testimonialStartX);
-    
-    if (Math.abs(walk) > dragThreshold) {
-        if (walk > 0) {
-            prevTestimonial();
-        } else {
-            nextTestimonial();
+    testimonialCarousel.addEventListener('mousemove', (e) => {
+        if (!testimonialDragging) return;
+        e.preventDefault();
+        const x = e.pageX;
+        const walk = (x - testimonialStartX);
+        
+        if (Math.abs(walk) > dragThreshold) {
+            if (walk > 0) {
+                prevTestimonial();
+            } else {
+                nextTestimonial();
+            }
+            testimonialDragging = false;
         }
+    });
+
+    testimonialCarousel.addEventListener('mouseup', () => {
         testimonialDragging = false;
-    }
-});
+        testimonialCarousel.style.cursor = 'grab';
+    });
 
-testimonialCarousel.addEventListener('mouseup', () => {
-    testimonialDragging = false;
-    testimonialCarousel.style.cursor = 'grab';
-});
-
-testimonialCarousel.addEventListener('mouseleave', () => {
-    testimonialDragging = false;
-    testimonialCarousel.style.cursor = 'grab';
-});
+    testimonialCarousel.addEventListener('mouseleave', () => {
+        testimonialDragging = false;
+        testimonialCarousel.style.cursor = 'grab';
+    });
+}
 
 // Initialize first testimonial
 showTestimonial(0);
 
-carousel.addEventListener('scroll', updateDots);
-createDots();setupCarousel();
+// Only add carousel event listeners if carousel exists
+if (carousel) {
+    carousel.addEventListener('scroll', updateDots);
+    createDots();
+}
 
 const observerOptions = {
     threshold: 0.2
