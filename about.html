@@ -147,6 +147,77 @@
         </div>
     </section>
 
+    <!-- Certifications & Badges Section -->
+    <section class="certifications">
+        <div class="certifications-container">
+            <div class="certifications-header">
+                <div class="about-subtitle">OUR CREDENTIALS</div>
+                <h2>Professional Certifications & Badges</h2>
+                <p>Our team has invested in continuous learning and professional development. These certifications demonstrate our expertise in bookkeeping and accounting, ensuring you receive the highest quality service from trained professionals.</p>
+            </div>
+            <div class="certifications-wrapper">
+                <div class="certifications-carousel">
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/intuit-bookkeeping-certification.png" alt="Intuit Bookkeeping Certification">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/QBO bookkeeper.png" alt="QBO Bookkeeper Certification">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/QBO level 1.png" alt="QBO Level 1 Certification">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/QBO Level 2.png" alt="QBO Level 2 Certification">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/quickbooks-online-certification-level-2.png" alt="QuickBooks Online Certification Level 2">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/QBO Payroll Badge.png" alt="QBO Payroll Badge">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/QB-Online.png" alt="QuickBooks Online Certification">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/client-advisory-services-foundations.png" alt="Client Advisory Services Foundations">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/blob.png" alt="Additional Certification">
+                    </div>
+                    <!-- Duplicate all items for seamless infinite loop -->
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/intuit-bookkeeping-certification.png" alt="Intuit Bookkeeping Certification">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/QBO bookkeeper.png" alt="QBO Bookkeeper Certification">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/QBO level 1.png" alt="QBO Level 1 Certification">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/QBO Level 2.png" alt="QBO Level 2 Certification">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/quickbooks-online-certification-level-2.png" alt="QuickBooks Online Certification Level 2">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/QBO Payroll Badge.png" alt="QBO Payroll Badge">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/QB-Online.png" alt="QuickBooks Online Certification">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/client-advisory-services-foundations.png" alt="Client Advisory Services Foundations">
+                    </div>
+                    <div class="cert-badge">
+                        <img src="assets/aa certs/blob.png" alt="Additional Certification">
+                    </div>
+                </div>
+            </div>
+            <div class="certifications-dots"></div>
+        </div>
+    </section>
+
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
@@ -168,6 +239,29 @@
                 full.style.display = 'none';
                 button.textContent = 'Read More';
                 button.classList.remove('expanded');
+            }
+        }
+
+        // Certifications Carousel - Auto-scrolling animation
+        const certificationsCarousel = document.querySelector('.certifications-carousel');
+        
+        if (certificationsCarousel) {
+            // Pause animation on hover for better UX
+            const wrapper = document.querySelector('.certifications-wrapper');
+            if (wrapper) {
+                wrapper.addEventListener('mouseenter', () => {
+                    certificationsCarousel.style.animationPlayState = 'paused';
+                });
+                
+                wrapper.addEventListener('mouseleave', () => {
+                    certificationsCarousel.style.animationPlayState = 'running';
+                });
+            }
+
+            // Remove dots since we have infinite scroll
+            const dotsContainer = document.querySelector('.certifications-dots');
+            if (dotsContainer) {
+                dotsContainer.style.display = 'none';
             }
         }
     </script>
