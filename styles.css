@@ -230,6 +230,69 @@ header.sticky .logo img {
     justify-content: center;
 }
 
+.hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    color: #ffffff;
+    padding: 18px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.hero-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero-cta-btn:hover::before {
+    left: 100%;
+}
+
+.hero-cta-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
+    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+    animation: none;
+}
+
+.hero-cta-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.hero-cta-btn i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.hero-cta-btn:hover i {
+    transform: scale(1.2) rotate(5deg);
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 35px rgba(255, 107, 53, 0.6), 0 0 20px rgba(255, 107, 53, 0.3);
+    }
+}
+
 .primary-btn {
     background: rgb(255, 255, 255);
     backdrop-filter: blur(10px);
@@ -1265,6 +1328,19 @@ footer {
         padding: 12px 30px;
         font-size: 14px;
     }
+
+    .hero-cta-btn {
+        padding: 16px 30px;
+        font-size: 15px;
+    }
+
+    .hero-cta-btn:hover {
+        transform: translateY(-2px) scale(1.03);
+    }
+
+    .hero-cta-btn i {
+        font-size: 18px;
+    }
 }
 
 /* Small mobile styles (max-width: 480px) */
@@ -1956,5 +2032,373 @@ footer {
     .menu ul li a.contact-btn-header {
         padding: 12px 30px;
         font-size: 16px;
+    }
+}
+
+/* Tax Season Modal Styles */
+.tax-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.tax-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tax-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.tax-modal-content {
+    position: relative;
+    background: #ffffff;
+    border-radius: 20px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease-out;
+    z-index: 10001;
+}
+
+.tax-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #4665BB 0%, #1a2980 100%);
+    border: 2px solid #4665BB;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    z-index: 10002;
+    box-shadow: 0 4px 15px rgba(70, 101, 187, 0.4);
+    animation: closeButtonPulse 2s ease-in-out infinite;
+}
+
+.tax-modal-close:hover {
+    background: linear-gradient(135deg, #1a2980 0%, #4665BB 100%);
+    color: #ffffff;
+    transform: scale(1.15) rotate(90deg);
+    box-shadow: 0 6px 20px rgba(70, 101, 187, 0.6);
+    animation: none;
+}
+
+.tax-modal-close:active {
+    transform: scale(0.95) rotate(90deg);
+}
+
+.tax-modal-close i {
+    transition: transform 0.3s ease;
+}
+
+.tax-modal-close:hover i {
+    transform: scale(1.2);
+}
+
+@keyframes closeButtonPulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(70, 101, 187, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(70, 101, 187, 0.6), 0 0 0 4px rgba(70, 101, 187, 0.1);
+        transform: scale(1.05);
+    }
+}
+
+.tax-modal-header {
+    padding: 40px 40px 20px;
+    text-align: center;
+    border-bottom: 2px solid #f5f8ff;
+}
+
+.tax-modal-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.tax-modal-header h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 28px;
+    color: #1a1a2e;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.tax-modal-body {
+    padding: 30px 40px;
+}
+
+.tax-modal-intro {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.tax-features {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.tax-feature {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.tax-feature i {
+    color: #ff6b35;
+    font-size: 24px;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.tax-feature h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+    color: #1a1a2e;
+    margin: 0 0 8px 0;
+}
+
+.tax-feature p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+}
+
+.tax-modal-guarantee {
+    background: #f5f8ff;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #ff6b35;
+    margin-top: 20px;
+}
+
+.tax-modal-guarantee p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+    font-style: italic;
+}
+
+.tax-modal-footer {
+    padding: 30px 40px 40px;
+    background: linear-gradient(135deg, #f5f8ff 0%, #ffffff 100%);
+    text-align: center;
+}
+
+.tax-modal-footer h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 24px;
+    color: #1a1a2e;
+    margin: 0 0 10px 0;
+}
+
+.tax-modal-footer > p {
+    font-size: 15px;
+    color: #666;
+    margin: 8px 0;
+}
+
+.tax-modal-cta-text {
+    font-weight: 600;
+    color: #333 !important;
+    margin: 15px 0 25px !important;
+}
+
+.tax-modal-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    color: #ffffff;
+    padding: 18px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.tax-modal-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.tax-modal-cta-btn:hover::before {
+    left: 100%;
+}
+
+.tax-modal-cta-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
+    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+    animation: none;
+}
+
+.tax-modal-cta-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.tax-modal-cta-btn i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.tax-modal-cta-btn:hover i {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .tax-modal-content {
+        width: 95%;
+        max-height: 95vh;
+        border-radius: 15px;
+    }
+
+    .tax-modal-header {
+        padding: 30px 20px 15px;
+    }
+
+    .tax-modal-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .tax-modal-header h2 {
+        font-size: 22px;
+    }
+
+    .tax-modal-body {
+        padding: 20px;
+    }
+
+    .tax-modal-intro {
+        font-size: 15px;
+    }
+
+    .tax-feature {
+        gap: 15px;
+    }
+
+    .tax-feature i {
+        font-size: 20px;
+    }
+
+    .tax-feature h3 {
+        font-size: 16px;
+    }
+
+    .tax-feature p {
+        font-size: 14px;
+    }
+
+    .tax-modal-guarantee {
+        padding: 20px;
+    }
+
+    .tax-modal-footer {
+        padding: 25px 20px 30px;
+    }
+
+    .tax-modal-footer h3 {
+        font-size: 20px;
+    }
+
+    .tax-modal-footer > p {
+        font-size: 14px;
+    }
+
+    .tax-modal-cta-btn {
+        padding: 16px 30px;
+        font-size: 15px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tax-modal-cta-btn:hover {
+        transform: translateY(-2px) scale(1.03);
+    }
+
+    .tax-modal-close {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
     }
 }

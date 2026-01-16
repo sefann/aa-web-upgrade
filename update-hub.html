@@ -22,7 +22,91 @@
         <div class="update-hero-content">
             <h1>Client Update Hub</h1>
             <p>Discover how we're evolving to serve you better</p>
-            <div class="underline"></div>
+            <div class="update-hero-buttons">
+                <button class="tax-modal-cta-btn" onclick="if(typeof showTaxModal === 'function') showTaxModal(); return false;" style="cursor: pointer; border: none;">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    Tax Season
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tax Season Section -->
+    <section class="tax-season-section">
+        <div class="tax-season-wrapper">
+            <div class="tax-season-badge">TAX SEASON SPECIAL</div>
+            <div class="tax-season-container">
+                <div class="tax-season-header">
+                    <div class="tax-season-icon-wrapper">
+                        <div class="tax-season-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div class="tax-season-icon-glow"></div>
+                    </div>
+                    <h2>Effortless Tax Services at Absolute Accountant</h2>
+                    <p class="tax-season-tagline">Experience a seamless, stress-free tax season with expert guidance</p>
+                </div>
+                
+                <div class="tax-season-intro-card">
+                    <p>At Absolute Accountant, we understand that tax season can feel overwhelming, but it doesn't have to. Our commitment is simple: to deliver a seamless, stress-free tax experience that empowers you with clarity, confidence, and timely results.</p>
+                </div>
+                
+                <div class="tax-season-features-grid">
+                    <div class="tax-feature-card">
+                        <div class="tax-feature-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <h3>Streamlined Onboarding</h3>
+                        <p>With intuitive document submission through secure portals, you can share your tax information quickly and confidently—no endless emails, no guesswork.</p>
+                    </div>
+                    
+                    <div class="tax-feature-card">
+                        <div class="tax-feature-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Personalized Guidance</h3>
+                        <p>Our team takes time to understand your unique situation. We proactively identify deductions and credits, maximizing your return while keeping compliance front and center.</p>
+                    </div>
+                    
+                    <div class="tax-feature-card">
+                        <div class="tax-feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Transparent Communication</h3>
+                        <p>You'll receive clear, consistent updates throughout the preparation process. Have questions? Our experts are available to clarify every step.</p>
+                    </div>
+                    
+                    <div class="tax-feature-card">
+                        <div class="tax-feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Fast & Accurate Delivery</h3>
+                        <p>We prepare and review your return with precision, then deliver your completed return efficiently and help you understand what it means for your financial picture.</p>
+                    </div>
+                </div>
+                
+                <div class="tax-season-guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="guarantee-content">
+                        <h3>Our Guarantee</h3>
+                        <p>At Absolute Accountant, ease, accuracy, and exceptional client service are guaranteed. We take pride in not just preparing your taxes, but in elevating your experience from start to finish.</p>
+                    </div>
+                </div>
+                
+                <div class="tax-season-cta-card">
+                    <div class="cta-content">
+                        <h3>Ready to Get Started?</h3>
+                        <p class="cta-subtitle">Take the first step toward a smoother tax season</p>
+                        <p class="cta-description">Book your FREE 30-minute tax strategy session with Nikki today and let us tailor a plan that fits your needs and goals.</p>
+                    </div>
+                    <a href="https://calendar.app.google/U3TfeEn57dB4LWha6" target="_blank" rel="noopener noreferrer" class="tax-season-cta-button" onclick="if(typeof showTaxModal === 'function') showTaxModal();">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Schedule Your Free 30-Minute Appointment</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -338,6 +422,7 @@
     <div id="footer-placeholder"></div>
 
     <script src="/components/loader.js"></script>
+    <script src="/components/tax-modal.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

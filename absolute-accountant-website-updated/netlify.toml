@@ -1,0 +1,17 @@
+# Netlify Configuration File
+
+[build]
+  publish = "."
+  command = "node rss-generator.js"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Identity settings for Netlify CMS
+[identity]
+  # Enable identity service for user management

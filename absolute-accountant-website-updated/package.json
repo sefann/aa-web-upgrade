@@ -1,0 +1,17 @@
+{
+  "name": "absolute-accountant-website",
+  "version": "1.0.0",
+  "description": "Absolute Accountant website with CMS integration",
+  "main": "index.html",
+  "scripts": {
+    "build": "node rss-generator.js",
+    "dev": "python -m http.server 8000",
+    "generate-rss": "node rss-generator.js"
+  },
+  "keywords": ["accounting", "tax", "website", "cms"],
+  "author": "Absolute Accountant",
+  "license": "MIT",
+  "devDependencies": {
+    "node": ">=14.0.0"
+  }
+}

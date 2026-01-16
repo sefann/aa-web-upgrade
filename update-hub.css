@@ -42,6 +42,274 @@
     margin: 0 auto;
 }
 
+/* Tax Season Button in Hero */
+.update-hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Tax Season Section - Redesigned */
+.tax-season-section {
+    padding: 60px 90px;
+    background: #ffffff;
+    position: relative;
+}
+
+.tax-season-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.tax-season-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    color: #ffffff;
+    padding: 6px 20px;
+    border-radius: 30px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 auto 25px;
+    display: block;
+    width: fit-content;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+}
+
+.tax-season-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tax-season-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.tax-season-icon-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.tax-season-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.tax-season-icon i {
+    color: #ffffff;
+}
+
+.tax-season-icon-glow {
+    display: none;
+}
+
+.tax-season-header h2 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.tax-season-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+    margin: 0;
+}
+
+.tax-season-intro-card {
+    background: linear-gradient(135deg, #4665BB 0%, #1a2980 100%);
+    padding: 25px 35px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(70, 101, 187, 0.2);
+}
+
+.tax-season-intro-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+    font-weight: 400;
+}
+
+.tax-season-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.tax-feature-card {
+    background: linear-gradient(135deg, #4665BB 0%, #1a2980 100%);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(70, 101, 187, 0.2);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.tax-feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(70, 101, 187, 0.3);
+}
+
+.tax-feature-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 107, 53, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 24px;
+    color: #ff6b35;
+    transition: transform 0.3s ease;
+}
+
+.tax-feature-card:hover .tax-feature-icon {
+    transform: scale(1.1);
+}
+
+.tax-feature-card h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.tax-feature-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.tax-season-guarantee-card {
+    background: linear-gradient(135deg, #4665BB 0%, #1a2980 100%);
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(70, 101, 187, 0.2);
+}
+
+.guarantee-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 107, 53, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #ff6b35;
+    flex-shrink: 0;
+}
+
+.guarantee-content h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+}
+
+.guarantee-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.tax-season-cta-card {
+    background: linear-gradient(135deg, #4665BB 0%, #1a2980 100%);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(70, 101, 187, 0.2);
+}
+
+.cta-content h3 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+}
+
+.cta-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 12px 0;
+}
+
+.cta-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 25px 0;
+    font-weight: 400;
+}
+
+.tax-season-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    color: #ffffff;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+    border: none;
+    cursor: pointer;
+}
+
+.tax-season-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+}
+
+.tax-season-cta-button i {
+    font-size: 18px;
+}
+
+.tax-season-cta-button span {
+    font-family: 'Inter', sans-serif;
+}
+
 /* Introduction Section */
 .update-intro {
     padding: 100px 90px;
@@ -810,6 +1078,72 @@
 
     .update-cta p {
         font-size: 16px;
+    }
+
+    .tax-season-section {
+        padding: 40px 20px;
+    }
+
+    .tax-season-header h2 {
+        font-size: 28px;
+    }
+
+    .tax-season-tagline {
+        font-size: 14px;
+    }
+
+    .tax-season-intro-card {
+        padding: 20px;
+    }
+
+    .tax-season-intro-card p {
+        font-size: 14px;
+    }
+
+    .tax-season-features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .tax-feature-card {
+        padding: 20px;
+    }
+
+    .tax-feature-card h3 {
+        font-size: 16px;
+    }
+
+    .tax-feature-card p {
+        font-size: 12px;
+    }
+
+    .tax-season-guarantee-card {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .guarantee-content h3 {
+        font-size: 16px;
+    }
+
+    .guarantee-content p {
+        font-size: 12px;
+    }
+
+    .tax-season-cta-card {
+        padding: 25px 20px;
+    }
+
+    .cta-content h3 {
+        font-size: 20px;
+    }
+
+    .tax-season-cta-button {
+        padding: 12px 25px;
+        font-size: 14px;
+        width: 100%;
+        justify-content: center;
     }
 }
 

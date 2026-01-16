@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "build": "node rss-generator.js",
-    "dev": "python -m http.server 8000",
+    "dev": "python server.py",
+    "start": "python server.py",
     "generate-rss": "node rss-generator.js"
   },
   "keywords": ["accounting", "tax", "website", "cms"],

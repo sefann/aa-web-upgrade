@@ -21,7 +21,12 @@
     <section class="consultation-title">
         <div class="title-container">
             <h1>Free Consultation</h1>
-            <div class="underline"></div>
+            <div class="hero-buttons" style="margin-top: 30px;">
+                <button class="tax-modal-cta-btn" onclick="if(typeof showTaxModal === 'function') showTaxModal(); return false;" style="cursor: pointer; border: none;">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    Tax Season
+                </button>
+            </div>
         </div>
     </section>
 
@@ -78,6 +83,7 @@
     <div id="footer-placeholder"></div>
 
     <script src="/components/loader.js"></script>
+    <script src="/components/tax-modal.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
